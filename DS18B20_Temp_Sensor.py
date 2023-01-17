@@ -35,12 +35,27 @@ html_template = """
 <html>
     <head>
         <title>Temperature</title>
+        <style>
+            body {
+                background-color: #f2f2f2;
+                font-family: Arial, sans-serif;
+                text-align: center;
+            }
+            h1 {
+                color: #4CAF50;
+            }
+            p {
+                font-size: 2em;
+                color: #333;
+            }
+        </style>
     </head>
     <body>
         <h1>Temperature</h1>
         <p>The current temperature is: {}</p>
     </body>
 </html>
+
 """
 while True:
     temp = read_temp()
