@@ -25,7 +25,7 @@ def read_temp():
         temp_string = lines[1][equals_pos+2:]
         temp_c = float(temp_string) / 1000.0
         #temp_f = temp_c * 9.0 / 5.0 + 32.0
-        return temp_c, #temp_f
+        return temp_c#,temp_f
 	
 #while True:
 #	print(read_temp())	
@@ -34,29 +34,15 @@ def read_temp():
 html_template = """
 <html>
     <head>
-        <title>Temperature</title>
-        <style>
-            body {
-                background-color: #f2f2f2;
-                font-family: Arial, sans-serif;
-                text-align: center;
-            }
-            h1 {
-                color: #4CAF50;
-            }
-            p {
-                font-size: 2em;
-                color: #333;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
-        <h1>Temperature</h1>
-        <p>The current temperature is: {}</p>
+        <h1>The Rimmer's Hot Tub Temperature !!</h1>
+        <p>The current temperature is: {} c</p>
     </body>
 </html>
-
 """
+
 while True:
     temp = read_temp()
     html_page = html_template.format(temp)
