@@ -27,6 +27,24 @@ def read_temp():
         #temp_f = temp_c * 9.0 / 5.0 + 32.0
         return temp_c, #temp_f
 	
+#while True:
+#	print(read_temp())	
+#	time.sleep(1)
+	
+html_template = """
+<html>
+    <head>
+        <title>Temperature</title>
+    </head>
+    <body>
+        <h1>Temperature</h1>
+        <p>The current temperature is: {}</p>
+    </body>
+</html>
+"""
 while True:
-	print(read_temp())	
-	time.sleep(1)
+    temp = read_temp()
+    html_page = html_template.format(temp)
+    with open("temperature.html", "w") as f:
+        f.write(html_page)
+    time.sleep(1)
