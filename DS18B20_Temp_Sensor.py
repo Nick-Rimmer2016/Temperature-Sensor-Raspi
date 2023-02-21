@@ -46,6 +46,6 @@ html_template = """
 while True:
     temp = read_temp()
     html_page = html_template.format(temp)
-    with open("temperature.html", "w") as f:
+    with open("/var/www/html/index.html", "w") as f:
         f.write(html_page)
     time.sleep(1)
